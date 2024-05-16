@@ -1,0 +1,28 @@
+//3.1
+The key function of the split() method is the add(n) action, wherein n is appended to either pEvenList or
+pOddList depending on if n is even or odd. This function is considered crucial because it directly supports
+the main purpose of the algorithm—dividing even and odd numbers into two distinct lists. Each item in pList is
+evaluated individually, determining whether it is even or odd, and then it is added to the appropriate list.
+The add operation is carried out for every element in pList, making it the most frequent operation in the method.
+Moreover, this operation is vital for fulfilling the algorithm's objective, which is consistent with the advice
+about pinpointing the operation integral to the algorithm’s core functionality.
+
+//3.2
+To ascertain the function f(n) representing the number of key operations in the split() function, we identify the
+key operation as the comparison between each character in the string and the delimiter. Given that the string has
+a length of n, each character is examined once to check if it matches the delimiter, leading us to define f(n)=n.
+This expression captures the fact that each character undergoes one comparison throughout the execution of split().
+Regarding time complexity, the worst-case scenario unfolds when none of the characters matches the delimiter until
+the very end, requiring a comparison for each character. Hence, the time complexity for the split() function is
+O(n). This linear complexity arises because the number of comparisons scales directly with the string's length.
+Each comparison is independent, and there are no nested iterations or recursive procedures that might amplify the
+complexity above linear levels. Therefore, 𝑓(𝑛)=𝑛 accurately reflects the linear relationship between the size of
+the input and the number of operations executed, marking the worst-case time complexity of split() as 𝑂(𝑛).
+
+//3.3
+The order in which the elements of pList are sorted whether ascending or not does not affect the time complexity
+of the split() method. This method processes each element in isolation by determining if it's even or odd and then
+adding it to the corresponding list. Since each element undergoes the same checks and actions
+(a modulus operation and an addition), their sequence has no impact on these individual operations.
+Consequently, the time complexity remains O(n). Sorting the elements prior to this DOES NOT change the essential
+operations performed on each element, thus maintaining the original time complexity.

@@ -77,8 +77,10 @@ public class Part4 extends Application {
         primaryStage.show();
     }
 
+    // Method to start the visualization
     private void startVisualization() {
         try {
+            // Parsing input values
             int size = Integer.parseInt(sizeInput.getText());
             array = new int[size];
             for (int i = 0; i < size; i++) {
@@ -90,13 +92,16 @@ public class Part4 extends Application {
             iterCount = 0;
             delay = (int) delaySlider.getValue();
 
+            // Populating the ListView with array values
             ObservableList<Integer> arrayValues = FXCollections.observableArrayList();
             for (int num : array) {
                 arrayValues.add(num);
             }
             arrayView.setItems(arrayValues);
 
+            // Timeline to animate the visualization
             timeline = new Timeline(new KeyFrame(Duration.millis(delay), event -> {
+                // Binary search logic
                 int mid = (low + high) / 2;
                 iterCount++;
                 statusLabel.setText("Iteration count: " + iterCount + ". Range: " + low + " - " + high + ". Mid: " + mid);
@@ -121,6 +126,7 @@ public class Part4 extends Application {
             statusLabel.setText("Invalid input. Please enter valid integers.");
         }
     }
+
 
     private void pauseVisualization() {
         if (timeline != null) {
